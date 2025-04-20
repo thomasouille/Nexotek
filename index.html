@@ -1,66 +1,127 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexotek - Double écran portable 2K</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexotek – Double Écran Portable 2K</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #000;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .hero h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background-color: #00bfff;
+      color: #fff;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .section {
+      padding: 40px 20px;
+    }
+    .section h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    .section img {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    .footer {
+      background: #000;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    .footer a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo Nexotek" class="logo" />
-        <nav>
-            <a href="#product">Produit</a>
-            <a href="#features">Fonctionnalités</a>
-            <a href="#reviews">Avis</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Double Écran Portable 2K Nexotek</h1>
-            <p>Optimisez votre productivité en déplacement ou au bureau grâce à notre écran 2K ultra-fin, léger et économe en énergie.</p>
-            <button class="cta-button">Acheter maintenant – 119€</button>
-        </div>
-    </section>
+<header>
+  <img src="logo.png" alt="Logo Nexotek">
+  <nav>
+    <a href="#produit">Produit</a>
+    <a href="#fonctionnalites">Fonctionnalités</a>
+    <a href="#avis">Avis</a>
+  </nav>
+</header>
 
-    <section id="features" class="features-section">
-        <h2>Pourquoi choisir Nexotek ?</h2>
-        <div class="feature-block">
-            <img src="image1.jpg" alt="Double écran attaché à un laptop" />
-            <p>Conçu pour les professionnels nomades, notre double écran permet de travailler efficacement, même en déplacement chez vos clients.</p>
-        </div>
-        <div class="feature-block reverse">
-            <img src="image2.jpg" alt="Productivité accrue avec double écran" />
-            <p>Vos collaborateurs gagnent en confort, en efficacité, et boostent leur productivité grâce à une organisation optimisée.</p>
-        </div>
-        <div class="feature-block">
-            <img src="image3.jpg" alt="Économie d'énergie avec l'écran Nexotek" />
-            <p>Réduisez vos coûts : notre écran consomme 5 fois moins d’électricité qu’un écran traditionnel. Une solution économique et écologique.</p>
-        </div>
-        <div class="feature-block reverse">
-            <img src="image4.jpg" alt="Utilisation en déplacement professionnel" />
-            <p>Compact, il se range facilement et vous accompagne dans toutes vos missions sans encombrement.</p>
-        </div>
-    </section>
+<section class="hero" id="produit">
+  <h1>Double Écran Portable 2K Nexotek</h1>
+  <p>Optimisez la productivité de vos salariés en déplacement ou en télétravail grâce à notre écran 2K ultra-fin, léger et économique.</p>
+  <a href="https://paygate.pro/nexotek" class="btn">Acheter maintenant – 119€</a>
+</section>
 
-    <section id="reviews" class="reviews-section">
-        <h2>Avis Clients</h2>
-        <div class="review">
-            <p>“Un produit de qualité, parfait pour le télétravail et les déplacements. Je recommande à 100% !” – Camille B.</p>
-        </div>
-        <div class="review">
-            <p>“Très utile, mes équipes l’utilisent au quotidien. Simple à installer et à utiliser.” – Marc D.</p>
-        </div>
-    </section>
+<section class="section" id="fonctionnalites">
+  <h2>Pourquoi choisir Nexotek ?</h2>
+  <img src="nexotek_product_1.jpg" alt="Double écran attaché à un laptop">
+  <p>• Gain de productivité immédiat pour les collaborateurs en déplacement ou au bureau.</p>
+  <p>• Se branche facilement à tout ordinateur portable.</p>
+  <p>• Ultra léger, transportable partout, idéal pour les commerciaux ou télétravailleurs.</p>
+  <p>• Consomme 5x moins qu’un écran classique – réduisez vos factures d’électricité.</p>
+  <img src="nexotek_product_2.jpg" alt="Écran déplié sur ordinateur">
+  <img src="nexotek_product_3.jpg" alt="Vue latérale de l'écran">
+  <img src="nexotek_product_4.jpg" alt="Double écran en situation professionnelle">
+</section>
 
-    <section class="purchase-section">
-        <button class="cta-button">Acheter maintenant – 119€</button>
-    </section>
+<section class="section" id="avis">
+  <h2>Avis de nos clients</h2>
+  <p>“Parfait pour mes déplacements chez les clients. Je l’installe en 30 secondes.” – Julien, consultant</p>
+  <p>“Mon équipe est plus efficace en télétravail avec ces écrans légers.” – Nathalie, RH PME</p>
+  <p>“Vraiment top, et on fait des économies d’énergie.” – Damien, DSI</p>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Nexotek. Tous droits réservés.</p>
-    </footer>
+<section class="section" style="text-align: center;">
+  <a href="https://paygate.pro/nexotek" class="btn">Acheter maintenant – 119€</a>
+</section>
+
+<footer class="footer">
+  <p>
+    <a href="contact.html">Contact</a> |
+    <a href="mentions-legales.html">Mentions légales</a> |
+    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+  </p>
+  <p>&copy; 2025 Nexotek. Tous droits réservés.</p>
+</footer>
+
 </body>
 </html>
