@@ -1,74 +1,119 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexotek - Double écran portable 2K</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexotek - Double écran 2K portable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #0a0a0a;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .section img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #111;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .highlight {
+      background-color: #f0f0f0;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    footer {
+      background-color: #0a0a0a;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .logo {
+      max-width: 100px;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo Nexotek" class="logo">
-        <nav>
-            <ul>
-                <li><a href="#features">Fonctionnalités</a></li>
-                <li><a href="#avis">Avis clients</a></li>
-                <li><a href="#commander" class="btn-header">Commander</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Boostez votre productivité avec Nexotek</h1>
-            <p>Double écran portable 2K pour les professionnels nomades</p>
-            <a href="#commander" class="cta-button">Commander maintenant</a>
-        </div>
-    </section>
+<header>
+  <img src="nexotek_logo.png" alt="Logo Nexotek" class="logo">
+  <h1>Boostez votre productivité avec Nexotek</h1>
+  <p>Le double écran 2K nouvelle génération</p>
+</header>
 
-    <section class="features" id="features">
-        <div class="feature-text">
-            <h2>Un écran pensé pour les pros</h2>
-            <p>Consomme 5x moins d’électricité qu’un écran standard. Léger, élégant et ultra-pratique. Idéal en télétravail ou en déplacement.</p>
-        </div>
-        <img src="produit.jpg" alt="Double écran Nexotek" class="product-img">
-    </section>
+<section class="section">
+  <h2>Un design innovant</h2>
+  <p>
+    Découvrez notre double écran portable 2K, pensé pour les professionnels nomades et les créateurs exigeants. Pliable à 360°, il s’adapte à tous vos besoins en un instant.
+  </p>
+  <img src="nexotek_product_1.jpg" alt="Double écran Nexotek">
+</section>
 
-    <section class="benefits">
-        <h2>Pourquoi choisir Nexotek ?</h2>
-        <div class="benefit-grid">
-            <div class="benefit-item">Écran 2K ultra-fin</div>
-            <div class="benefit-item">Économie d’énergie</div>
-            <div class="benefit-item">Compatibilité universelle</div>
-            <div class="benefit-item">Garantie 2 ans</div>
-        </div>
-    </section>
+<section class="section">
+  <h2>Multipliez votre efficacité</h2>
+  <p>
+    Grâce à ses trois écrans ultra-légers et extensibles, gagnez jusqu'à 50% de temps dans votre flux de travail : montage vidéo, bourse, codage ou télétravail, tout devient plus fluide.
+  </p>
+  <img src="nexotek_product_2.jpg" alt="Utilisation professionnelle">
+</section>
 
-    <section class="avis" id="avis">
-        <h2>Avis clients</h2>
-        <blockquote>“Excellent produit pour mon équipe tech. Très faible consommation et ultra pratique.” – Julien, CTO</blockquote>
-        <blockquote>“J’en ai commandé 5 pour mon entreprise, livraison rapide et super qualité.” – Amandine, Manager</blockquote>
-    </section>
+<section class="section">
+  <h2>Idéal en déplacement</h2>
+  <p>
+    Léger, compact et robuste, le modèle S11 s’emporte partout avec vous, que vous soyez en réunion, dans le train ou au coworking. La connectique universelle vous permet une compatibilité maximale.
+  </p>
+  <img src="nexotek_product_3.jpg" alt="Mobilité et transport">
+</section>
 
-    <section class="commande" id="commander">
-        <h2>Disponible maintenant</h2>
-        <p>Prix : <strong>119€</strong></p>
-        <form>
-            <label for="quantite">Quantité (max 7):</label>
-            <input type="number" id="quantite" name="quantite" min="1" max="7" value="1">
-            <button type="submit" class="cta-button">Commander</button>
-        </form>
-    </section>
+<section class="section highlight">
+  <h2>Consommation d'énergie réduite</h2>
+  <p>
+    La technologie Nexotek permet une consommation 5x inférieure à celle d’un écran classique. Idéal pour travailler plus longtemps sur batterie sans surchauffer.
+  </p>
+  <img src="nexotek_product_4.jpg" alt="Économie d'énergie">
+</section>
 
-    <footer>
-        <p>© 2025 Nexotek – contact.nexotek@gmail.com</p>
-        <div class="footer-links">
-            <a href="#">Mentions légales</a> |
-            <a href="#">Conditions générales</a> |
-            <a href="#">Politique de confidentialité</a>
-        </div>
-    </footer>
+<footer>
+  <p>© 2025 Nexotek – contact.nexotek@gmail.com</p>
+  <p><a href="#" style="color: #bbb;">Mentions légales</a> | <a href="#" style="color: #bbb;">CGV</a> | <a href="#" style="color: #bbb;">Politique de confidentialité</a></p>
+</footer>
+
 </body>
 </html>
