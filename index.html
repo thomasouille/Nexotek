@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nexotek - Double écran 2K portable</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -18,12 +18,33 @@
       background-color: #0a0a0a;
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem 1rem;
     }
 
-    header h1 {
-      font-size: 2.5rem;
+    .logo {
+      max-width: 120px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.3rem;
       margin-bottom: 0.5rem;
+    }
+
+    .cta-button {
+      background-color: #0070f3;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 1.5rem 0;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #005ad1;
     }
 
     .section {
@@ -35,13 +56,12 @@
     .section img {
       width: 100%;
       border-radius: 10px;
-      margin-top: 1rem;
+      margin-top: 1.2rem;
     }
 
     .section h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
-      color: #111;
     }
 
     .section p {
@@ -56,6 +76,29 @@
       margin-top: 2rem;
     }
 
+    .reviews {
+      background-color: #fff;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .review {
+      max-width: 900px;
+      margin: auto;
+      margin-bottom: 2rem;
+    }
+
+    .review p {
+      font-style: italic;
+    }
+
+    .review strong {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #444;
+    }
+
     footer {
       background-color: #0a0a0a;
       color: #ccc;
@@ -64,9 +107,20 @@
       font-size: 0.9rem;
     }
 
-    .logo {
-      max-width: 100px;
-      margin-bottom: 1rem;
+    a {
+      color: #bbb;
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .cta-button {
+        width: 90%;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -76,6 +130,7 @@
   <img src="nexotek_logo.png" alt="Logo Nexotek" class="logo">
   <h1>Boostez votre productivité avec Nexotek</h1>
   <p>Le double écran 2K nouvelle génération</p>
+  <button class="cta-button">Commander maintenant</button>
 </header>
 
 <section class="section">
@@ -110,9 +165,28 @@
   <img src="nexotek_product_4.jpg" alt="Économie d'énergie">
 </section>
 
+<section class="section" style="text-align:center;">
+  <button class="cta-button">Commander maintenant</button>
+</section>
+
+<section class="reviews">
+  <div class="review">
+    <p>"Produit incroyable. J’utilise trois écrans pour trader tous les jours et je ne peux plus m’en passer."</p>
+    <strong>— Marc D., Trader indépendant</strong>
+  </div>
+  <div class="review">
+    <p>"En déplacement constamment, ce triple écran a changé ma manière de bosser. Ultra pratique et léger."</p>
+    <strong>— Laura B., Consultante en communication</strong>
+  </div>
+  <div class="review">
+    <p>"Très bonne qualité d’affichage, et installation facile. Je recommande à tous les développeurs et créas."</p>
+    <strong>— Youssef M., UX Designer</strong>
+  </div>
+</section>
+
 <footer>
   <p>© 2025 Nexotek – contact.nexotek@gmail.com</p>
-  <p><a href="#" style="color: #bbb;">Mentions légales</a> | <a href="#" style="color: #bbb;">CGV</a> | <a href="#" style="color: #bbb;">Politique de confidentialité</a></p>
+  <p><a href="#">Mentions légales</a> | <a href="#">CGV</a> | <a href="#">Politique de confidentialité</a></p>
 </footer>
 
 </body>
