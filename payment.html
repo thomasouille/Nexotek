@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Paiement sécurisé - S11 Nexotek</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Paiement sécurisé</h1>
+    <p>Merci de votre confiance ! Veuillez entrer vos informations pour régler les <strong>119€</strong> du <strong>S11 Nexotek</strong>.</p>
+
+    <!-- iFrame vers la page de paiement PayGate -->
+    <iframe src="https://paygate.to/0xa1bEdEeA45BDb34746316a3D6e7F03D5BD17d13b" allow="payment"></iframe>
+  </div>
+</body>
+</html>
